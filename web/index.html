@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>¡Hola Amigos!</title>
+  <meta name="description" content="A fun, offline way for a young child to learn first Spanish words." />
+
+  <!-- Fit iPhone/iPad screens, avoid accidental pinch/double-tap zoom -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#ffb03b" />
+
+  <!-- iOS "Add to Home Screen" support: makes this behave like a real app icon,
+       full-screen with no Safari chrome, once added. -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Hola Amigos" />
+  <link rel="apple-touch-icon" href="icons/icon-180.png" />
+  <link rel="icon" href="icons/icon-192.png" />
+  <link rel="manifest" href="manifest.webmanifest" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app" role="main"></div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("sw.js").catch(() => {
+          // Offline caching is a nice-to-have; ignore failures (e.g. file:// testing).
+        });
+      });
+    }
+  </script>
+</body>
+</html>

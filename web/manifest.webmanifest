@@ -1,0 +1,15 @@
+{
+  "name": "¡Hola Amigos!",
+  "short_name": "Hola Amigos",
+  "description": "A fun, offline way to learn first Spanish words.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#fff6d8",
+  "theme_color": "#ffb03b",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
