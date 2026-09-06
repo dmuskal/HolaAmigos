@@ -1,0 +1,34 @@
+name: HolaAmigos
+options:
+  bundleIdPrefix: com.dmuskal
+  deploymentTarget:
+    iOS: "16.0"
+
+targets:
+  HolaAmigos:
+    type: application
+    platform: iOS
+    sources:
+      - path: Sources/HolaAmigos
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.dmuskal.holaamigos
+        MARKETING_VERSION: "1.0"
+        CURRENT_PROJECT_VERSION: "1"
+        SWIFT_VERSION: "5.0"
+        TARGETED_DEVICE_FAMILY: "1,2" # iPhone + iPad
+        SUPPORTS_MACCATALYST: false
+        DEVELOPMENT_ASSET_PATHS: ""
+    info:
+      path: Sources/HolaAmigos/App/Info.plist
+      properties:
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
