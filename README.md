@@ -9,27 +9,20 @@ flashcards and a listen-and-tap picture game.
 This is the version to use. It's a plain static web app: no build step, no
 account, no App Store.
 
-**Try it right now, on your computer or phone:** open `web/index.html`
-directly in a browser (double-click it, or drag it into a browser tab).
+**Live link:** **https://dmuskal.github.io/HolaAmigos/**
+Open that in **Safari** on an iPhone/iPad, then tap the Share icon →
+**Add to Home Screen**. It launches full-screen from its own home-screen
+icon from then on, like a real app, and keeps working offline after that
+first load. This is the link to send your niece.
 
-**To install it on an iPhone/iPad** (yours, or send the link to your niece):
-1. Host the `web/` folder somewhere reachable by URL — the easiest option
-   is GitHub Pages (see below).
-2. Open that URL in **Safari** on the iPhone/iPad.
-3. Tap the Share icon → **Add to Home Screen**.
-4. It now launches full-screen from its own home-screen icon, like a real
-   app, and keeps working offline after that first load.
+You can also just open `docs/index.html` directly in any browser to try it
+without the live link.
 
-### Hosting it with GitHub Pages
-
-1. In this repo's GitHub settings → Pages, set the source to the `web/`
-   folder on the `master` branch (or ask whoever's driving the repo to run
-   `gh api -X POST repos/<owner>/HolaAmigos/pages -f "source[branch]=master" -f "source[path]=/web"`).
-   Note: GitHub Pages on a **private** repo requires a paid GitHub plan; on
-   the free plan the repo (or at least the Pages site) needs to be public.
-2. GitHub gives you a URL like `https://<owner>.github.io/HolaAmigos/`.
-   Share that link — that's what you open in Safari and "Add to Home
-   Screen" from.
+Served via GitHub Pages from the `docs/` folder (that's the folder GitHub
+Pages requires — it's the same app, name aside). The repo is public so
+Pages can serve it on GitHub's free plan; there's nothing sensitive in a
+static kids' vocabulary app. If you ever want it private again, Pages on a
+private repo needs a paid GitHub plan.
 
 No backend, no sign-in, no ads, no data collection — everything runs and
 speaks on-device (via the browser's built-in speech synthesis), so it's

@@ -30,22 +30,28 @@ should be filtered through that constraint:
 This repo currently holds **two builds of the same app**, because of how
 the project's constraints evolved:
 
-| | `web/` | `Sources/HolaAmigos/` |
+| | `docs/` | `Sources/HolaAmigos/` |
 |---|---|---|
 | Status | **Primary / actively used** | Dormant reference build |
 | Stack | Plain HTML/CSS/JS PWA | SwiftUI, iOS 16+ |
 | Why | Author has no Mac and the child is remote — a web app installs via a link and a browser "Add to Home Screen," no Xcode/App Store/Apple Developer account needed | Was the original plan; kept in case a Mac + Apple Developer account become available later for a true native app |
-| Run it | Open `web/index.html` / host on GitHub Pages | Needs a Mac + Xcode + XcodeGen |
+| Run it | https://dmuskal.github.io/HolaAmigos/ (or open `docs/index.html` directly) | Needs a Mac + Xcode + XcodeGen |
 
-**Default to `web/` for any new work** unless the user explicitly asks for
+The folder is named `docs/` rather than something like `web/` only because
+that's one of the two paths GitHub Pages' legacy branch-deploy will serve
+from (the other being repo root, which was worse — it would've mixed the
+app's files in with the Swift project/README/etc). It's not documentation;
+it's the whole app.
+
+**Default to `docs/` for any new work** unless the user explicitly asks for
 the native Swift version. Keep the two in sync on vocabulary/content if you
 touch one and it's a quick change, but don't feel obligated to port every
 web feature back to Swift — that build is not the active target.
 
-## `web/` — structure
+## `docs/` — structure
 
 ```
-web/
+docs/
   index.html    - shell, iOS home-screen meta tags, PWA manifest link
   styles.css    - all styling
   data.js       - CATEGORIES + WORDS (the vocabulary; edit here to add words)
@@ -60,12 +66,12 @@ web/
 ```
 
 No build step, no dependencies, no bundler — it's plain static files by
-design, so it can be hosted anywhere (GitHub Pages, any static host) or
-opened directly from disk.
+design. Pushing to `master` updates the live GitHub Pages site automatically
+(usually within a minute or two).
 
 ### Adding vocabulary (web)
 
-Edit `WORDS` (and `CATEGORIES` for a new category) in `web/data.js` —
+Edit `WORDS` (and `CATEGORIES` for a new category) in `docs/data.js` —
 nothing else needs to change; the home grid, flashcards, and quiz all read
 from it. Keep each category small (5-8 words): mastery of a few words beats
 a large overwhelming deck for this age group.
